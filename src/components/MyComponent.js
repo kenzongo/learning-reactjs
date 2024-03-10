@@ -1,5 +1,6 @@
 import React from 'react';
 import UserInfo from './UserInfo';
+import DisplayInfo from './DisplayInfo';
 class MyComponent extends React.Component {
     //JSX
     //Solution 1:
@@ -42,9 +43,14 @@ class MyComponent extends React.Component {
     //     })
     // }
     render() {
+        const arr = [1, 2, 3, 4, 5]
         return (
             <div>
                 <UserInfo />
+                <br />
+                <br />
+                <DisplayInfo name="Kenzo" age="24" arr={arr} />
+                <DisplayInfo name="Khang" age="18" arr={arr} />
             </div>
         );
     }

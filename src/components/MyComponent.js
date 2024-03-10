@@ -15,11 +15,11 @@ class MyComponent extends React.Component {
     //     this.handleMouseOver = this.handleMouseOver.bind(this)
     // }
     //Solution 2
-    state = {
-        name: 'Kenzongo',
-        age: 24,
-        address: 'Ho Chi Minh City',
-    };
+    // state = {
+    //     name: 'Kenzongo',
+    //     age: 24,
+    //     address: 'Ho Chi Minh City',
+    // };
     // handleMouseOver(event) {
     //     //console.log(event.pageX);
     // }
@@ -42,15 +42,23 @@ class MyComponent extends React.Component {
     //         age: Math.floor(Math.random() * 100 + 1)
     //     })
     // }
+    state = {
+        listUser: [
+            { id: 1, name: 'Khang', age: 24 },
+            { id: 2, name: 'KenzoNgo', age: 28 },
+            { id: 3, name: 'OverDev', age: 18 },
+        ]
+    }
     render() {
-        const arr = [1, 2, 3, 4, 5]
+        //const arr = [1, 2, 3, 4, 5]
         return (
             <div>
                 <UserInfo />
                 <br />
                 <br />
-                <DisplayInfo name="Kenzo" age="24" arr={arr} />
-                <DisplayInfo name="Khang" age="18" arr={arr} />
+                {/* <DisplayInfo name="Kenzo" age="24" arr={arr} />
+                <DisplayInfo name="Khang" age="18" arr={arr} /> */}
+                <DisplayInfo listUser={this.state.listUser} />
             </div>
         );
     }

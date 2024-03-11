@@ -59,12 +59,17 @@ class MyComponent extends React.Component {
         //const arr = [1, 2, 3, 4, 5]
         return (
             <>
-                <AddUserInfo handleAddUser={this.handleAddUser} />
-                <br />
-                <br />
-                {/* <DisplayInfo name="Kenzo" age="24" arr={arr} />
-                <DisplayInfo name="Khang" age="18" arr={arr} /> */}
-                <DisplayInfo listUser={this.state.listUser} />
+                <div className='a'>
+                    <AddUserInfo handleAddUser={this.handleAddUser} />
+                    <br />
+                    <br />
+                    {/* <DisplayInfo name="Kenzo" age="24" arr={arr} />
+                    <DisplayInfo name="Khang" age="18" arr={arr} /> */}
+                    <DisplayInfo listUser={this.state.listUser} />
+                </div>
+                <div className='b'>
+
+                </div>
             </>
         );
     }

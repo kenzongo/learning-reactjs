@@ -1,4 +1,5 @@
 import React from "react";
+import './DisplayInfo.scss'
 class DisplayInfo extends React.Component {
     state = {
         isShowListUser: true
@@ -11,7 +12,7 @@ class DisplayInfo extends React.Component {
     render() {
         const { listUser } = this.props
         return (
-            <div>
+            <div className="display-info-containers">
                 <button onClick={(event) => this.handleHideShow(event)}>
                     {this.state.isShowListUser ? "Hide" : "Show"} List User
                 </button>
@@ -20,6 +21,11 @@ class DisplayInfo extends React.Component {
                         {listUser.map((user) => {
                             return (
                                 <div key={user.id} className={+user.age >= 18 ? "green" : "red"}>
+                                    {/*
+                                    Inline Css
+                                    <p style={{ color: 'yellow' }}>
+                                        My name's {user.name}
+                                    </p> */}
                                     <p>
                                         My name's {user.name}
                                     </p>

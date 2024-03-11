@@ -14,7 +14,7 @@ class DisplayInfo extends React.Component {
         const { listUser } = this.props
         return (
             <div className="display-info-containers">
-                <img src={logo} alt="Logo error" />
+                <img src={logo} alt="Logo error" /><br />
                 <button onClick={(event) => this.handleHideShow(event)}>
                     {this.state.isShowListUser ? "Hide" : "Show"} List User
                 </button>

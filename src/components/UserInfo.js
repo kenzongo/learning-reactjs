@@ -2,13 +2,13 @@ import React from "react";
 
 class UserInfo extends React.Component {
     state = {
-        name: 'Kenzongo',
-        age: 24,
-        address: 'Ho Chi Minh City',
+        name: '',
+        age: '',
+        address: '',
     };
-    handleOnChangeInput = (event) => {
+    handleOnChangeName = (event) => {
         this.setState({
-            name: event.target.value,
+            name: event.target.value
         });
     };
     handleOnSubmit = (event) => {
@@ -20,8 +20,13 @@ class UserInfo extends React.Component {
     }
     handleOnChangeAge = (event) => {
         this.setState({
-            age: event.target.value,
+            age: event.target.value
         });
+    }
+    handleOnChangeAddress = (event) => {
+        this.setState({
+            address: event.target.value
+        })
     }
     handleKeyDown = (event) => {
         if (event.key === 'Enter') {
@@ -34,8 +39,7 @@ class UserInfo extends React.Component {
         return (
             <div>
                 <p>
-                    My name is {this.state.name}, {this.state.age} years old &amp; live in{' '}
-                    {this.state.address}
+                    My name is {this.state.name}, {this.state.age} years old &amp; live in {this.state.address}
                 </p>
                 <form onSubmit={this.handleOnSubmit}>
                     <table>
@@ -46,7 +50,7 @@ class UserInfo extends React.Component {
                                 </td>
                                 <td>
                                     <input
-                                        onChange={(event) => this.handleOnChangeInput(event)}
+                                        onChange={(event) => this.handleOnChangeName(event)}
                                         type="text"
                                         value={this.state.name}
                                         name="firstInput"
@@ -62,8 +66,21 @@ class UserInfo extends React.Component {
                                     <input
                                         type="text"
                                         onChange={(event) => this.handleOnChangeAge(event)}
-                                        onKeyDown={(event) => this.handleKeyDown(event)}
                                         value={this.state.age}
+                                        name="secondInput"
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Your address: </label>
+                                </td>
+                                <td>
+                                    <input
+                                        onKeyDown={(event) => this.handleKeyDown(event)}
+                                        onChange={(event) => this.handleOnChangeAddress(event)}
+                                        type="text"
+                                        value={this.state.address}
                                         name="lastInput"
                                     />
                                 </td>

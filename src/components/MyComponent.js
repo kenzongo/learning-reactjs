@@ -1,6 +1,6 @@
 import React from 'react';
-import UserInfo from './UserInfo';
 import DisplayInfo from './DisplayInfo';
+import AddUserInfo from './AddUserInfo';
 class MyComponent extends React.Component {
     //JSX
     //Solution 1:
@@ -49,11 +49,17 @@ class MyComponent extends React.Component {
             { id: 3, name: 'OverDev', age: '29', address: 'Hanoi' },
         ]
     }
+    handleAddUser = (objUser) => {
+        console.log(objUser.id);
+        this.setState({
+            listUser: [objUser, ...this.state.listUser]
+        })
+    }
     render() {
         //const arr = [1, 2, 3, 4, 5]
         return (
             <div>
-                <UserInfo />
+                <AddUserInfo handleAddUser={this.handleAddUser} />
                 <br />
                 <br />
                 {/* <DisplayInfo name="Kenzo" age="24" arr={arr} />

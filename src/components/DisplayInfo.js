@@ -2,15 +2,31 @@ import React from "react";
 import './DisplayInfo.scss'
 // import logo from '../logo.svg'
 class DisplayInfo extends React.Component {
-    state = {
-        isShowListUser: true
+    constructor(props) {
+        super(props)
+        this.state = {
+            isShowListUser: true
+        }
+        console.log('>>>> Check constructor');
     }
     handleHideShow = (event) => {
         this.setState({
             isShowListUser: !this.state.isShowListUser
         })
     }
+    componentDidMount() {
+        console.log('>>>> call me component did mount ....');
+    }
+    componentDidUpdate(prevProps) {
+        console.log('call me component did update ', this.props.listUser, prevProps.listUser);
+        if (this.props.listUser.length !== prevProps.listUser.length) {
+            if (this.props.listUser.length === 5) {
+                alert('You got 5 users')
+            }
+        }
+    }
     render() {
+        console.log('>>>> Check render');
         const { listUser } = this.props
         return (
             <div className="display-info-containers">

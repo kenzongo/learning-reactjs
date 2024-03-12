@@ -2,6 +2,16 @@ import React from 'react';
 import DisplayInfo from './DisplayInfo';
 import AddUserInfo from './AddUserInfo';
 class MyComponent extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            listUser: [
+                { id: 1, name: 'Khang', age: '24', address: 'Ho Chi Minh City' },
+                { id: 2, name: 'KenzoNgo', age: '16', address: 'Tra Vinh' },
+                { id: 3, name: 'OverDev', age: '29', address: 'Hanoi' },
+            ]
+        }
+    }
     //JSX
     //Solution 1:
     // constructor(props) {
@@ -42,15 +52,7 @@ class MyComponent extends React.Component {
     //         age: Math.floor(Math.random() * 100 + 1)
     //     })
     // }
-    state = {
-        listUser: [
-            { id: 1, name: 'Khang', age: '24', address: 'Ho Chi Minh City' },
-            { id: 2, name: 'KenzoNgo', age: '16', address: 'Tra Vinh' },
-            { id: 3, name: 'OverDev', age: '29', address: 'Hanoi' },
-        ]
-    }
     handleAddUser = (objUser) => {
-        console.log(objUser.id);
         this.setState({
             listUser: [objUser, ...this.state.listUser]
         })

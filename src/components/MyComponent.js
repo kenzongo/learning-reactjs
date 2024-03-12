@@ -55,6 +55,11 @@ class MyComponent extends React.Component {
             listUser: [objUser, ...this.state.listUser]
         })
     }
+    handleDeleteUser = (userID) => {
+        this.setState({
+            listUser: [...this.state.listUser].filter(user => user.id !== userID)
+        })
+    }
     render() {
         //const arr = [1, 2, 3, 4, 5]
         return (
@@ -65,7 +70,7 @@ class MyComponent extends React.Component {
                     <br />
                     {/* <DisplayInfo name="Kenzo" age="24" arr={arr} />
                     <DisplayInfo name="Khang" age="18" arr={arr} /> */}
-                    <DisplayInfo listUser={this.state.listUser} />
+                    <DisplayInfo listUser={this.state.listUser} handleDeleteUser={this.handleDeleteUser} />
                 </div>
                 <div className='b'>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import './DisplayInfo.scss'
-import logo from '../logo.svg'
+// import logo from '../logo.svg'
 class DisplayInfo extends React.Component {
     state = {
         isShowListUser: true
@@ -14,7 +14,7 @@ class DisplayInfo extends React.Component {
         const { listUser } = this.props
         return (
             <div className="display-info-containers">
-                <img src={logo} alt="Logo error" /><br />
+                {/* <img src={logo} alt="Logo error" /><br /> */}
                 <button onClick={(event) => this.handleHideShow(event)}>
                     {this.state.isShowListUser ? "Hide" : "Show"} List User
                 </button>
@@ -37,6 +37,7 @@ class DisplayInfo extends React.Component {
                                     <p>
                                         I'm from {user.address}
                                     </p>
+                                    <button onClick={() => this.props.handleDeleteUser(user.id)}>Delete</button>
                                     <hr />
                                 </div>
                             )
@@ -59,7 +60,7 @@ class DisplayInfo extends React.Component {
                         )
                     })}
                 </div> */}
-            </div>
+            </div >
 
         )
     }

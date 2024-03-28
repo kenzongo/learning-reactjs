@@ -50,7 +50,7 @@ class AddUserInfo extends React.Component {
                         <tbody>
                             <tr>
                                 <td>
-                                    <label>Your name: </label>
+                                    <label htmlFor="yourname">Your name: </label>
                                 </td>
                                 <td>
                                     <input
@@ -59,13 +59,15 @@ class AddUserInfo extends React.Component {
                                         type="text"
                                         value={this.state.name}
                                         name="firstInput"
+                                        id="yourname"
+                                        autoComplete="on"
                                     // placeholder="input name"
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label>Your age: </label>
+                                    <label htmlFor="age">Your age: </label>
                                 </td>
                                 <td>
                                     <input
@@ -74,12 +76,14 @@ class AddUserInfo extends React.Component {
                                         onChange={(event) => this.handleOnChangeAge(event)}
                                         value={this.state.age}
                                         name="secondInput"
+                                        id="age"
+                                        autoComplete="on"
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label>Your address: </label>
+                                    <label htmlFor="address">Your address: </label>
                                 </td>
                                 <td>
                                     <input
@@ -88,6 +92,8 @@ class AddUserInfo extends React.Component {
                                         type="text"
                                         value={this.state.address}
                                         name="lastInput"
+                                        id="address"
+                                        autoComplete="on"
                                     />
                                 </td>
                             </tr>

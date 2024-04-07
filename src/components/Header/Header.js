@@ -1,12 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+//import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar bg="dark" expand="lg" className="bg-body-tertiary" variant="dark">
+        <Navbar bg="light" expand="lg" className="bg-body-tertiary" variant="light">
             <Container>
                 <NavLink to={`/`} className="navbar-brand">React-Bootstrap</NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -20,11 +20,13 @@ const Header = () => {
                         <Nav.NavLink href="admins">Admin</Nav.NavLink> */}
                     </Nav>
                     <Nav>
-                        <NavDropdown title="Settings" id="basic-nav-dropdown">
+                        <button className="btn-login">Log in</button>
+                        <button className="btn-signup">Sign up</button>
+                        {/* <NavDropdown title="Settings" id="basic-nav-dropdown">
                             <NavDropdown.Item>Log in</NavDropdown.Item>
                             <NavDropdown.Item>Log out</NavDropdown.Item>
                             <NavDropdown.Item>User Info</NavDropdown.Item>
-                        </NavDropdown>
+                        </NavDropdown> */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

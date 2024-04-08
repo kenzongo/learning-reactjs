@@ -7,7 +7,10 @@ import {
     SidebarFooter,
     SidebarContent,
 } from 'react-pro-sidebar';
-import { FaTachometerAlt, FaGem, FaGithub, FaRegLaughWink } from 'react-icons/fa';
+import './SideBar.scss'
+import { FaReact, FaGem, FaGithub } from 'react-icons/fa';
+import { MdDashboard } from "react-icons/md";
+import { IconContext } from 'react-icons'
 import sidebarBg from '../../assets/bg2.jpg';
 
 const SideBar = ({ collapsed, toggled, handleToggleSidebar }) => {
@@ -33,29 +36,29 @@ const SideBar = ({ collapsed, toggled, handleToggleSidebar }) => {
                             whiteSpace: 'nowrap',
                         }}
                     >
-                        Kenzo Ngo
+                        <IconContext.Provider value={{ size: '2.5rem', color: '#00bfff' }}>
+                            <FaReact /> &nbsp;
+                        </IconContext.Provider>
+                        <span>Kenzo Ngo</span>
                     </div>
                 </SidebarHeader>
 
                 <SidebarContent>
                     <Menu iconShape="circle">
                         <MenuItem
-                            icon={<FaTachometerAlt />}
-                            suffix={<span className="badge red">new</span>}
+                            icon={<MdDashboard />}
                         >
                             Dashboard
                         </MenuItem>
-                        <MenuItem icon={<FaGem />}> components </MenuItem>
                     </Menu>
                     <Menu iconShape="circle">
                         <SubMenu
-                            suffix={<span className="badge yellow">3</span>}
-                            title={'withSuffix'}
-                            icon={<FaRegLaughWink />}
+                            title={'Features'}
+                            icon={<FaGem />}
                         >
-                            <MenuItem> 1</MenuItem>
-                            <MenuItem> 2</MenuItem>
-                            <MenuItem> 3</MenuItem>
+                            <MenuItem>Quản Lý User</MenuItem>
+                            <MenuItem>Quản Lý Bài Quiz</MenuItem>
+                            <MenuItem>Quản Lý Câu Hỏi</MenuItem>
                         </SubMenu>
                     </Menu>
                 </SidebarContent>
@@ -75,7 +78,7 @@ const SideBar = ({ collapsed, toggled, handleToggleSidebar }) => {
                         >
                             <FaGithub />
                             <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                                {'viewSource'}
+                                {'View Github'}
                             </span>
                         </a>
                     </div>

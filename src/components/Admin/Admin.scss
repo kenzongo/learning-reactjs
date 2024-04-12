@@ -1,8 +1,19 @@
+$backgroud-border-header: red;
+$backgroud-border-main: green;
 .admin-container {
     display: flex;
     .admin-sidebar {
         .pro-sidebar {
             height: 100vh;
+        }
+    }
+    .admin-content {
+        width: 100%;
+        .admin-header {
+            border: 1px solid $backgroud-border-header;
+        }
+        .admin-main{
+            border: 1px solid $backgroud-border-main;
         }
     }
 }

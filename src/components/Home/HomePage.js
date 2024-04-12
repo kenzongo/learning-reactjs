@@ -1,5 +1,6 @@
 import videoWebm from '../../assets/hero.webm';
 import videoMp4 from '../../assets/hero.mp4';
+import './HomePage.scss'
 const HomePage = (props) => {
     return (
         <div className="homepage-container">

@@ -9,7 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Admin from './components/Admin/Admin'
 import User from './components/User/User';
 import HomePage from './components/Home/HomePage';
-
+import DashBoard from './components/Admin/Content/Dashboard'
+import ManageUser from './components/Admin/Content/ManageUser';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
@@ -20,11 +21,14 @@ root.render(
           <Route index element={<HomePage />} />
           <Route path='/users' element={<User />} />
         </Route>
-        <Route path='/admins' element={<Admin />} />
+        <Route path='/admins' element={<Admin />} >
+          <Route index element={<DashBoard />} />
+          <Route path='manage-users' element={<ManageUser />} />
+        </Route>
       </Routes>
     </BrowserRouter>
     {/* </React.StrictMode> */}
-  </Provider>
+  </Provider >
 );
 
 // If you want to start measuring performance in your app, pass a function

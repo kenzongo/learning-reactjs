@@ -24,25 +24,29 @@ const ModalCreateUser = (props) => {
                     <Modal.Title>Add New User</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <form class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" />
+                    <form className="row g-3">
+                        <div className="col-md-6">
+                            <label className="form-label">Email</label>
+                            <input type="email" className="form-control" />
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control" />
+                        <div className="col-md-6">
+                            <label className="form-label">Password</label>
+                            <input type="password" className="form-control" />
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Username</label>
+                        <div className="col-md-6">
+                            <label className="form-label">Username</label>
                             <input type="text" className="form-control" />
                         </div>
-                        <div class="col-md-4">
-                            <label class="form-label">Role</label>
-                            <select class="form-select">
+                        <div className="col-md-4">
+                            <label className="form-label">Role</label>
+                            <select className="form-select">
                                 <option selected value="USER">USER</option>
                                 <option value="ADMIN">ADMIN</option>
                             </select>
+                        </div>
+                        <div className="col-12">
+                            <label className="form-label">Image</label>
+                            <input type="file" className="form-control" />
                         </div>
                     </form>
                 </Modal.Body>

@@ -1,8 +1,4 @@
 const DashBoard = (props) => {
-    return (
-        <div>
-            DashBoard
-        </div>
-    )
-}
+  return <div>DashBoard</div>;
+};
 export default DashBoard;
